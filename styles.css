@@ -1,0 +1,400 @@
+:root {
+  --cream: #fff8ec;
+  --cream-deep: #f4ead8;
+  --blue: #123766;
+  --blue-soft: #1f4b7a;
+  --text: #25313d;
+  --muted: #586676;
+  --gold: #d99028;
+  --gold-dark: #a76010;
+  --white: #ffffff;
+  --border: #d8c8ad;
+  --focus: #0a66c2;
+  --shadow: 0 18px 45px rgba(18, 55, 102, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--text);
+  font-family: "Atkinson Hyperlegible", Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  line-height: 1.65;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+.container {
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.skip-link {
+  position: absolute;
+  left: 20px;
+  top: -100px;
+  z-index: 10;
+  padding: 12px 18px;
+  background: var(--blue);
+  color: var(--white);
+  border-radius: 6px;
+}
+
+.skip-link:focus {
+  top: 20px;
+}
+
+.site-header {
+  background: rgba(255, 248, 236, 0.96);
+  border-bottom: 1px solid var(--border);
+}
+
+.header-inner,
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand,
+.footer-name {
+  margin: 0;
+  color: var(--blue);
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.header-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 8px 18px;
+  color: var(--blue);
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+  border: 2px solid var(--blue);
+  border-radius: 6px;
+}
+
+.site-header .container {
+  padding: 18px 0;
+}
+
+.hero {
+  padding: 72px 0 64px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.92fr);
+  align-items: center;
+  gap: 52px;
+}
+
+.eyebrow,
+.section-kicker {
+  margin: 0 0 12px;
+  color: var(--gold-dark);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+  overflow-wrap: anywhere;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  color: var(--blue);
+  line-height: 1.15;
+}
+
+h1 {
+  max-width: 740px;
+  font-size: clamp(42px, 7vw, 70px);
+}
+
+h2 {
+  font-size: clamp(32px, 5vw, 48px);
+}
+
+h3 {
+  font-size: 25px;
+}
+
+.hero-text {
+  max-width: 700px;
+  margin: 24px 0 32px;
+  color: var(--text);
+  font-size: clamp(22px, 3vw, 28px);
+  line-height: 1.5;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60px;
+  padding: 14px 28px;
+  background: var(--gold);
+  color: #17120a;
+  font-size: 22px;
+  font-weight: 700;
+  text-decoration: none;
+  border: 2px solid var(--gold-dark);
+  border-radius: 6px;
+  box-shadow: 0 8px 0 rgba(167, 96, 16, 0.22);
+}
+
+.button:hover,
+.button:focus-visible,
+.header-link:hover,
+.header-link:focus-visible {
+  outline: 4px solid rgba(10, 102, 194, 0.25);
+  outline-offset: 4px;
+}
+
+.button:hover {
+  background: #e0a044;
+}
+
+.hero-media {
+  overflow: hidden;
+  border: 8px solid var(--white);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.hero-media img {
+  width: 100%;
+  min-height: 390px;
+  object-fit: cover;
+}
+
+.signup-section,
+.note-section {
+  padding: 72px 0;
+  background: var(--white);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.signup-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(340px, 1.05fr);
+  gap: 44px;
+  align-items: center;
+}
+
+.signup-grid p,
+.note-panel p {
+  margin: 18px 0 0;
+  color: var(--text);
+  font-size: 22px;
+}
+
+.substack-embed-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 24px;
+  background: var(--cream);
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 10px 28px rgba(18, 55, 102, 0.08);
+}
+
+.substack-embed-wrap iframe {
+  display: block;
+  width: min(100%, 480px);
+  max-width: 100%;
+  height: 320px;
+  border-radius: 6px;
+}
+
+.signup-fallback {
+  width: min(100%, 480px);
+  margin-top: 24px;
+  text-align: center;
+}
+
+.signup-fallback p {
+  margin: 0 0 18px;
+  color: var(--text);
+  font-size: 21px;
+  line-height: 1.45;
+}
+
+.signup-fallback-button {
+  width: 100%;
+  max-width: 420px;
+}
+
+.features {
+  padding: 78px 0;
+}
+
+.section-heading {
+  max-width: 700px;
+  margin-bottom: 36px;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.feature-card {
+  min-height: 300px;
+  padding: 30px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 10px 28px rgba(18, 55, 102, 0.08);
+}
+
+.feature-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  margin-bottom: 22px;
+  background: #eaf2f8;
+  color: var(--blue);
+  font-size: 24px;
+  font-weight: 700;
+  border: 2px solid #bdd2e2;
+  border-radius: 50%;
+}
+
+.feature-card p {
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 20px;
+}
+
+.note-panel {
+  max-width: 900px;
+}
+
+.site-footer {
+  padding: 34px 0;
+  background: var(--blue);
+  color: var(--white);
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+.site-footer .footer-name {
+  color: var(--white);
+}
+
+@media (max-width: 900px) {
+  body {
+    font-size: 19px;
+  }
+
+  .hero {
+    padding-top: 48px;
+  }
+
+  .hero-grid,
+  .signup-grid,
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-grid {
+    gap: 34px;
+  }
+
+  .hero-media img {
+    min-height: 300px;
+  }
+
+  .feature-card {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 620px) {
+  .container {
+    width: min(100% - 28px, 1120px);
+  }
+
+  .header-inner,
+  .footer-inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .brand,
+  .footer-name {
+    font-size: 21px;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  h2 {
+    font-size: 32px;
+  }
+
+  .hero-text,
+  .signup-grid p,
+  .note-panel p {
+    font-size: 21px;
+  }
+
+  .hero,
+  .signup-section,
+  .features,
+  .note-section {
+    padding: 48px 0;
+  }
+
+  .button,
+  .header-link {
+    width: 100%;
+  }
+
+  .substack-embed-wrap,
+  .feature-card {
+    padding: 24px;
+  }
+
+  .substack-embed-wrap iframe {
+    height: 340px;
+  }
+}
